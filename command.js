@@ -1,5 +1,5 @@
 const { REST, Routes } = require('discord.js');
-
+require("dotenv").config();
 const commands = [
     {
         name: 'translate',
@@ -15,7 +15,7 @@ const commands = [
     },
 ];
 
-const rest = new REST({ version: '10' }).setToken('MTI1OTQyNzY4OTgzMjUxNzY4Mw.Gty5Sg.j5pzBnCt70n8yKlx4Zzs5XMPAxPA2UoyEQgc8w');
+const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_BOT_TOKEN);
 
 (async () => {
     try {
